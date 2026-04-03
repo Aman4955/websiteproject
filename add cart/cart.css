@@ -1,0 +1,39 @@
+body{
+    font-family: Arial;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cart-box{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 600px;
+    
+}
+
+.cart-box img{
+    width: 200px;
+}
+
+button{
+    padding: 8px 15px;
+    background: red;
+    color: white;
+    border: none;
+    /* cursor: pointer; */
+}
+
+.buyBtn{
+    margin-top: 20px;
+    background: orange;
+    font-size: 16px;
+}

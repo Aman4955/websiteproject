@@ -1,0 +1,196 @@
+*{
+  margin: 0;
+}
+body{
+    display: flex;
+  justify-content: center;
+
+
+}
+.about-product{
+  height:700px;
+  width: 80%;
+  background-color:white;
+  box-shadow: 0px 0px 10px black;
+  display: flex;
+  margin-top: 10px;
+}
+.plate1{
+    height:700px;
+  width:50%;
+  background-color:white;
+  /* box-shadow: 0px 0px 10px black; */
+  display: flex;
+}
+.produut{
+  height:100%;
+  width:100%;
+  background-color:white;
+  box-shadow: 0px 0px 10px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+position: relative;
+ /* border-radius: 20px; */
+
+}
+.iphone17pro{
+  height:600px;
+  width:600px;
+ border-radius: 20px;
+}
+.plate2{
+    height:700px;
+  width:50%;
+  background-color:white;
+  /* box-shadow: 0px 0px 10px black; */
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  position: relative;
+ 
+}
+.name-of-product{
+  height:120px;
+  width:90% ;
+  /* background-color: violet; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  left: 10px;
+  top: 10px;
+ 
+}
+.rating{
+  height:40px;
+  width:90% ;
+  /* background-color: violet; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+ position: relative;
+ left: 10px;
+}
+select{
+  height: 25px;
+  width: 150px;
+  border-radius: 3px;
+  border: none;
+}
+.price{
+    height:40px;
+  width:90% ;
+  /* background-color: rgb(121, 166, 124); */
+  /* position: relative; */
+  top: 5px;
+   position: relative;
+ left: 10px;
+}
+.dollar{
+  font-size: 20px;
+  color: green;
+}
+.storage{
+  height:50px;
+  width: 280px;
+  /* background-color: lightcoral; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+   position: relative;
+ left: 10px;
+}
+.s{
+font-size:20px;
+font-weight: bold;
+}
+.storage-btn{
+  height:25px;
+  width:80px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.storage-btn:hover{
+  box-shadow: 0px 0px 5px;
+}
+.quantity{
+  height: 60px;
+  width: 150px;
+  /* background-color: lightslategray; */
+   position: relative;
+ left: 10px;
+}
+.input-quantity{
+  height: 25px;
+  width: 50px;
+  position: relative;
+  left:60px;
+  border-radius: 5px;
+}
+.addtocart-bynow{
+  height: 90px;
+  width: 650px;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  justify-self:center;
+  align-items: center;
+
+
+  gap:20px;
+
+
+}
+.add-to-cart{
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.add-to-cart:hover{
+  box-shadow: 0px 0px 10px rgb(242, 115, 4);
+}
+.buy-now{
+  height:30px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: rgb(255, 198, 10);
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
+.buy-now:hover{
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.discription-plate{
+  height: 200px;
+  width: 600px;
+  /* background-color: blueviolet; */
+ 
+}
+.discription{
+  font-size: 20px;
+  font-weight:bold;
+  font-family: Arial, Helvetica, sans-serif;
+   position: relative;
+ left: 10px;
+}
+.discription-content{
+  height: 200px;
+  width: 400px;
+  /* background-color: blueviolet; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   position: relative;
+ left: 10px;
+ 
+}

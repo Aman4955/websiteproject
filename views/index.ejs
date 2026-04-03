@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>eBllary Bazar</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/style/indexcs.css'>
+  <!DOCTYPE html>
+
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        
+
+            <h1 class="websitelogo">
+                <!-- <img src="/style/images/weblogo.png" alt="">  </h1> -->
+            <h1>Bellary Bazar</h1>
+
+    
+
+    </div>
+
+
+    <!-- =============top side item and icon===================== -->
+
+
+    <div class="menu">
+        <div class="threelines">
+           
+
+        </div>
+        <div class="search">
+
+    <img src="/style/images/magnifying-glass-solid.png" class="search-icon" alt="search">
+
+    <input type="search" id="sh" placeholder="Search">
+
+</div>
+        <div class="more-option">
+            <div class="like-item">
+                <img src="/style/images/thumbs-up-solid.png" alt="">
+
+            </div>
+            <div class="reg">
+                <a href="/sign">
+                <img src="/style/images/circle-user-solid.png" alt="">
+                        </a>
+            </div>
+            <div class="cart">
+                <a href="/cart">
+                <img src="/style/images/cart-arrow-down-solid.png" alt="">
+                    </a>
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- ================icons company============== -->
+<div class="navigation">
+    <div class="links">
+        <a href="" class="nav-links">| Mobiles     |</a>
+    </div>
+ 
+     <div class="links">
+        <a href="" class="nav-links">| Laptop  |</a>
+    </div>
+     <div class="links">
+        <a href="" class="nav-links">| Burds  |</a>
+    </div>
+     <div class="links">
+        <a href="" class="nav-links">| Electronic |</a>
+    </div>
+</div>
+<!-- ==============worning===================== -->
+ <div class="worning">
+    <p><samp>⚠️ Warning</samp>: Please login or signup to continue.</p>
+ </div>
+    <!-- ==================== ads class code================ -->
+<div class="ads">
+    <div class="ad1">
+    
+    </div>
+
+
+    <div class="ad2">
+        <div class="a1">
+            <div class="b1">
+
+            </div>
+            <div class="b2">
+
+            </div>
+        </div>
+        <div class="a2">
+            <div class="b3">
+
+            </div>
+            <div class="b4">
+                
+            </div>
+        </div>
+    
+    </div>
+
+
+    <div class="ad3">
+
+    </div>
+</div>
+    <!-- ===============freame itams=============== -->
+
+
+
+ <div class="content">
+
+  <% products.forEach(p => { %>
+
+    <div class="frame">
+
+      <!-- IMAGE -->
+      <div class="p1">
+        <img src="<%= p.image %>" alt="">
+      </div>
+
+      <!-- NAME -->
+      <div class="p2">
+        <p><%= p.name %></p>
+      </div>
+
+      <!-- BUTTON -->
+      <form action="/cart" method="POST">
+        <input type="hidden" name="name" value="<%= p.name %>">
+        <input type="hidden" name="image" value="<%= p.image %>">
+
+        <button type="submit">Add</button>
+      </form>
+
+    </div>
+
+  <% }) %>
+
+</div>
+
+ <%- include("partials/footer") %>
+    </div>
+    <!-- <script src='indexjs.js'></script> -->
+    
+</body>
+</html>
