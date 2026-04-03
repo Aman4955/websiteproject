@@ -21,16 +21,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
 
   const products = [
-    { name: "iPhone 17 Pro", image: "/images/iphone.png" },
-    { name: "Samsung Ultra", image: "/images/samsung.png" },
-    { name: "Infinix Note", image: "/images/infinix.png" },
-    { name: "Nothing Phone", image: "/images/nothing.png" },
-     { name: "vivo X200", image: "/images/infinix.png" },
-    { name: " AI+ Nova 5G ", image: "/images/nothing.png" }
+    { name: "iPhone 17 Pro", image: "/images/iphone17.jpg"  },
+    { name: "Samsung Ultra", image: "/images/SamsungUltra.jpg" },
+    { name: "Infinix Zore", image: "/images/InfinixZore.jpg" },
+    { name: "Nothing Phone", image: "/images/NothingPhone.jpg" },
+     { name: "vivo X200", image: "/images/vivoX200.jpg" },
+    { name: " AI+ Nova 5G ", image: "/images/AI+Nova.jpg" }
   ];
 
-  res.render("index", { products });  // 🔥 IMPORTANT
+ const ads = [
+  { image: "/images/a1.jpg" },
+  { image: "/images/a2.jpg" },
+  { image: "/images/a3.jpg" },
+  { image: "/images/a4.jpg" },
+  { image: "/images/a5.jpg" },
+  { image: "/images/a6.jpg" }
+];
+
+  // 🔥 IMPORTANT LINE
+  res.render("index", { products, ads });
 });
+
+
 // Cart
 app.post("/add-to-cart", (req, res) => {
   const { name, image } = req.body;
@@ -96,6 +108,8 @@ app.post('/sign', (req, res) => {
     console.log("Signup:", username, userpassword);
     res.redirect('/');
 });
+
+
 
 // Server start
 app.listen(4000, () => {

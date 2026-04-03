@@ -179,7 +179,46 @@ font-size: large;
 
 /* ================ad class csss================ */
 
-.ads{
+.ads {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Left - Center - Right */
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+/* BIG ADS */
+.ad.big {
+  height: 300px;
+}
+
+.ad.big img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* CENTER GRID (4 ADS) */
+.center-ads {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+
+}
+
+/* SMALL ADS */
+.ad.small {
+  height: 140px;
+}
+
+.ad.small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* .ads{
     width: 100% ;
     height: 240px;
     background-color: brown;
@@ -227,7 +266,7 @@ font-size: large;
     height: 220px;
     background-color: rgb(20, 226, 20);
    
-}
+} */
 /* ==================for top selection css code no items================= */
 
 
