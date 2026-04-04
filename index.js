@@ -1,23 +1,33 @@
+
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+let cart = [];
+
 const app = express();
+
+//===== fix __dirname diclera done========
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ✅ EJS setup
+
+
+//  EJS setup
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// ✅ Middleware
+//  Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ✅ Routes (EJS render)
+// ================== TELEGRAM bot CONFIG ==================
+const TOKEN = "8235443510:AAFOwrss_rNp3fyQXWBFjZ9pRGTlw5ws3Cc";   
+const CHAT_ID = "8363575839";
 
-// Home
+// ===============Home=============
 app.get('/', (req, res) => {
 
   const products = [
@@ -38,18 +48,75 @@ app.get('/', (req, res) => {
   { image: "/images/a6.jpg" }
 ];
 
-  // 🔥 IMPORTANT LINE
+  //  IMPORTANT LINE
   res.render("index", { products, ads });
 });
 
 
-// Cart
+//============= Cart========
 app.post("/add-to-cart", (req, res) => {
   const { name, image } = req.body;
 
   cart.push({ name, image });
 
   res.redirect("/");
+});
+
+
+
+//========= Payment============
+
+app.get("/checkout", (req, res) => {
+    res.render("checkout"); 
+});
+
+// 👉 ORDER + TELEGRAM
+app.post("/pay", async (req, res) => {
+  try {
+    const data = req.body;
+
+    console.log("🔥 ORDER:", data);
+
+    const message = `
+🛒 New Order
+
+👤 Name: ${data.fullname}
+📞 Phone: ${data.phone}
+
+📍 Address:
+${data.address}
+${data.city}, ${data.state} - ${data.pincode}
+
+💳 Payment: ${data.payment}
+    `;
+
+    const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message
+      })
+    });
+
+    const result = await response.json();
+    console.log("📩 Telegram:", result);
+
+    res.send("✅ Order Sent Successfully 🚀");
+
+  } catch (err) {
+    console.log("❌ ERROR:", err);
+    res.send("❌ Error sending order");
+  }
+});
+
+// =========product===========
+
+// Product page
+app.get('/product', (req, res) => {
+    res.render('product');
 });
 
 // Products
@@ -73,16 +140,7 @@ app.get('/samsungphone', (req, res) => {
     res.render('samsungphone');
 });
 
-// Payment
-app.get('/pay', (req, res) => {
-    res.render('pay');
-});
-
-// Product page
-app.get('/product', (req, res) => {
-    res.render('product');
-});
-
+// ==========login==============
 // Login page
 app.get('/login', (req, res) => {
     res.render('login');
@@ -97,6 +155,8 @@ app.post('/login', (req, res) => {
     res.redirect('/');
 });
 
+
+// ==========sing=============
 // Page open
 app.get('/sign', (req, res) => {
     res.render('sign');
@@ -108,6 +168,7 @@ app.post('/sign', (req, res) => {
     console.log("Signup:", username, userpassword);
     res.redirect('/');
 });
+
 
 
 

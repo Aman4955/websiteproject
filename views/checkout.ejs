@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/style/pay.css">
+</head>
+<body>
+
+<form action="/pay" method="POST">
+
+<div class="freame">
+
+  <!-- ADDRESS -->
+  <div class="dtails">
+    <div class="address-form">
+      <h2>Shipping Address</h2>
+
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="pincode" placeholder="Pincode" required>
+      <input type="text" name="state" placeholder="State" required>
+      <input type="text" name="city" placeholder="City" required>
+      <textarea name="address" placeholder="Full Address" required></textarea>
+    </div>
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="paymethod">
+
+    <h3>Select Payment</h3>
+
+    <!-- ✅ clickable buttons -->
+    <div onclick="showPayment('card')" style="cursor:pointer;">💳 Card</div>
+    <div onclick="showPayment('upi')" style="cursor:pointer;">📱 UPI</div>
+    <div onclick="showPayment('cash')" style="cursor:pointer;">💵 Cash</div>
+
+    <!-- ✅ hidden input -->
+    <input type="hidden" name="payment" id="paymentType">
+
+    <!-- ✅ IMPORTANT: visible area -->
+    <div id="payment-content" style="margin-top:15px;"></div>
+
+    <!-- ✅ final order button -->
+    <button type="submit">Place Order</button>
+
+  </div>
+
+</div>
+
+</form>
+
+<script>
+function showPayment(method) {
+    console.log("CLICK:", method); // 🔍 debug
+
+    const content = document.getElementById("payment-content");
+    const paymentInput = document.getElementById("paymentType");
+
+    if (paymentInput) {
+        paymentInput.value = method;
+    }
+
+    if (!content) return;
+
+    if (method === "card") {
+        content.innerHTML = `
+        <h3>Card Payment</h3>
+
+        <input type="text" placeholder="Card Number" class="input-box"><br><br>
+        <input type="text" placeholder="Cardholder Name" class="input-box"><br><br>
+
+        <div>
+            <input type="text" placeholder="MM/YY" class="input-box">
+            <input type="text" placeholder="CVV" class="input-box">
+        </div>
+        `;
+    }
+
+    else if (method === "cash") {
+        content.innerHTML = `
+        <h3>Cash on Delivery</h3>
+        <p>You will pay when product arrives.</p>
+        `;
+    }
+
+    else if (method === "upi") {
+        content.innerHTML = `
+        <h3>UPI Payment</h3>
+
+        <input type="text" placeholder="Enter UPI ID" class="input-box">
+        `;
+    }
+}
+</script>
+
+</body>
+</html>

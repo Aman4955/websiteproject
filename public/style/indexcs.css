@@ -182,8 +182,8 @@ font-size: large;
 .ads {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr; /* Left - Center - Right */
-  gap: 20px;
-  padding: 20px;
+  gap: 40px;
+  padding: 10px;
   align-items: center;
 }
 
