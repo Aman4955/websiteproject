@@ -173,7 +173,7 @@ const CHAT_ID = "8363575839"
 //========= Payment============functions=====
 // ================== CHECKOUT ==================
 app.get("/checkout", (req, res) => {
-  if (cart.length === 0) return res.redirect("/");
+  if (cart.length === 0) return res.redirect("/checkout");
   res.render("checkout", { cart });
 });
 
