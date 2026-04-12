@@ -3,7 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    background-color: rgb(5, 118, 194);
+    background-color:#1FA4A5;
 }
 .freame{
     width: 800px;
@@ -18,21 +18,31 @@ body{
 .dtails{
     width: 50%;
     height: 90%;
-    background-color: rgb(37, 0, 97);
+    /* background-color: rgb(37, 0, 97); */
+    background-color: #00625b;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    
     border-radius: 10PX;
 }
+
+textarea::placeholder {
+  color: #e0f7fa;
+}
+
 .address-form {
  display: flex;
  flex-direction: column;
  align-items: center;
+ width: 90%;
+ justify-content: center;
+ margin-left: 10px;
 }
 
 .address-form h2 {
   text-align: center;
   color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin-bottom: 30px;
 }
 
@@ -46,6 +56,7 @@ body{
   background: transparent;
   color: white;
   outline: none;
+  font-size: large;
 }
 form{
     display: flex;
@@ -70,147 +81,87 @@ form{
   background: #333;
    transition:0.3s;
 }
-/* .header1{
-    width: 100%;
-    height: 10%;
-    background-color: rgb(84, 84, 109);
-    color: white;
-    text-align: center;
-} */
-/* .price{
-    width: 100%;
-    height: 10%;
-    background-color: rgb(112, 240, 80);
-    color: white;
-    margin-top: 10PX;
-    margin-left: 5px;
-} */
+
 
 
 /* ===========payment============= */
-.content{
-    width: 100%;
-    height: 80%;
-    /* background-color: rgb(200, 214, 7); */
-    color: white;
-    margin-top: 10PX;
-      margin-left: 5px;
+
+.paymethod {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  overflow-y: auto;   /* 🔥 IMPORTANT */
 }
-.paymethod{
-    width: 40%;
-    height: 90%;
-    /* background-color: rgb(66, 66, 66); */
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
+.icons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
 }
 
-.header2{
-    width: 100%;
-    height: 10%;
-    /* background-color: rgb(209, 48, 48); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.icons{
-    width: 100%;
-    height: 10%;
-    /* background-color: rgb(19, 199, 223); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-}
-.card{
-    width: 18%;
-    height: 80%;
-    background-color:#f2f2f2;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.card img{
-    width: 100%;
-    height: 90%;
-    border-radius: 10px;
-}
-.cash{
-    width: 18%;
-    height: 80%;
-    background-color:#f2f2f2;
-    border-radius: 10px;
-      display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.cash img{
-    width: 100%;
-    height: 90%;
-    border-radius: 10px;
+.option {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
-.upi{
-    width: 18%;
-    height: 60%;
-    background-color:#f2f2f2;
-      display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.upi img{
-    width: 100%;
-    height: 90%;
-    /* border-radius: 10px; */
-}
-.pay{
-    width: 100%;
-    height: 70%;
-    /* background-color: rgb(49, 7, 240); */
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-   margin-top: -8px;
+.option:hover {
+  background-color: #eee;
 }
 
- .pay-title{
-    margin:20px ;
-   
+.input-box {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-.input-box{
-    width:80%;
-    padding:12px 15px;
-    margin:10px ;
-    border:none;
-    border-radius:25px;
-    background:#f2f2f2;
-    font-size:16px;
-    outline:none;
+.input-box:focus {
+  border-color: #007bff;
+  outline: none;
 }
-.row{
-    display:flex;
-    justify-content:center;
-    gap:15px;
+.row {
+  display: flex;
+  gap: 10px;
 }
 
-.small{
-    width:35%;
+.row .input-box {
+  width: 50%;
+}
+#payment-content {
+  margin-top: 15px;
+  width: 100%;
 }
 
-.pay-btn{
-    margin-top:9px;
-  
-    margin-left: 50px;
-    padding:10px 20px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(to right,#d4b5ff,#b084f5);
-   
-    transition:0.3s;
+.option img {
+  max-width: 40px;
+  max-height: 40px;
+  pointer-events: none; /* 🔥 click div pe jayega */
 }
 
-.pay-btn:hover{
-    transform:scale(1.05);
+button{
+  margin-top: 30px;
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+margin-left: 60px;
+color: white;
+  background-color: #00625b;
 }
+button:hover {
+
+  box-shadow: 0px 10px 20px rgba(17, 214, 46, 0.6);
+}
+

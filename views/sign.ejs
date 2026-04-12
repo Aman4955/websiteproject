@@ -5,11 +5,14 @@
     <title>Sign Page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='/style/logandsin.css'>
+        
+
 </head>
 
 <body>
-
+<%- include("partials/header") %>
 <div class="content">
+    
     <h1 class="logi">Register</h1>
 
     <!-- ✅ FORM START -->
@@ -31,7 +34,7 @@
         </div>
 
         <!-- ✅ BUTTON -->
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" onclick="this.disabled=true;this.form.submit();" class="btn">Register</button>
 
     </form>
 
@@ -41,11 +44,12 @@
     </p>
 </div>
 
-<div class="footer">
+ <%- include("partials/footer") %>
+<!-- <div class="footer">
     <h3>copyright &copy; </h3>
-</div>
+</div> -->
 
-<script src="/sign.js"></script>
+<!-- <script src="/sign.js"></script> -->
 
 </body>
 </html>

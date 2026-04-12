@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(135deg,#f5a6a6,#a67db8,#4a6fa5);
+    /* background: linear-gradient(135deg,#546ee4,#244c8a,#1c457a); */
     min-height: 100vh;
     color: white;
     margin: 0%;
@@ -7,13 +7,14 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
    
 }
 .content{
     width: 400px;
-    height: 400px;
+    height: 450px;
     /* border: 1px rgb(253, 2, 2) solid; */
-    background-color: #bbbbbb86;
+    background-color: #b6b6b6;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,6 +69,16 @@ body{
     color: white;
     text-decoration: none;
     border-radius: 25px;
+    margin-left: 120px;
+}
+.log{
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #4a6fa5;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+   
 }
 .sub{
     color: rgb(0, 0, 0);

@@ -1,4 +1,14 @@
-<%- include("partials/header") %>
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>My Cart</title>
+  <link rel='stylesheet' href='/style/cart.css'>
+  link:c
+</head>
+<body>
+  <%- include("partials/header") %>
 
 <h2>My Cart 🛒</h2>
 
@@ -12,11 +22,38 @@
 
     <div class="frame">
       <img src="<%= item.image %>" alt="">
-      <p><%= item.name %></p>
+      <p><%= item.name %> (x<%= item.quantity %>)</p>
+
+      <!-- INCREASE -->
+      <form action="/cart/increase" method="POST" style="display:inline;">
+        <input type="hidden" name="name" value="<%= item.name %>">
+        <button>+</button>
+      </form>
+
+      <!-- DECREASE -->
+      <form action="/cart/decrease" method="POST" style="display:inline;">
+        <input type="hidden" name="name" value="<%= item.name %>">
+        <button>-</button>
+      </form>
+
+      <!-- REMOVE -->
+      <form action="/cart/remove" method="POST" style="display:inline;">
+        <input type="hidden" name="name" value="<%= item.name %>">
+        <button>Remove</button>
+      </form>
+
     </div>
 
   <% }) %>
 
-</div>
+  <!-- ✅ BUY NOW BUTTON FIX -->
+  <% if(cart.length > 0){ %>
+    <form action="/checkout" method="GET">
+      <button type="submit">Buy Now</button>
+    </form>
+  <% } %>
 
-<%- include("partials/footer") %>
+</div>
+ <%- include("partials/footer") %>
+</body>
+</html>

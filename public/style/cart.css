@@ -7,23 +7,43 @@ body{
     justify-content: center;
     align-items: center;
     
+    
 }
 
-.cart-box{
+.content{
+    height: 100%;
+    width: 1000px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     gap: 30px;
     align-items: center;
     border: 1px solid #ccc;
     padding: 20px;
-    width: 600px;
+    
+}
+.frame{
+    /* height: 200px;
+    width: 800px; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+    
     
 }
 
-.cart-box img{
-    width: 200px;
+.frame img{
+    width: 80%;
+    height: 100%;
 }
+/* .frame{
+    height: 200px;
+    width: 200px;
+} */
 
 button{
     padding: 8px 15px;

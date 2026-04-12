@@ -6,32 +6,36 @@
     <title>login Page </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/style/logandsin.css'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='/style/header.css'> -->
 </head>
 <body>
+   <%- include("partials/header") %>
     <div class="content">
         <h1 class="logi">Login</h1>
         
-
+        <form action="/login" method="post">
         <div class="name">
-            <input type="text" required>
+            <input type="text" name="username" required>
             <label>Username</label>
 
         </div>
         <div class="name">
-             <input type="password" required>
+             <input type="password" name="userpassword" required>
              <label>Password</label>
 
         </div>
-            <a href="./index.ejs" class="btn">Login</a>
-            <p>Don't have an account? <br> <a href="__dirname/views/sign.ejs" class="sub">Sign in</a></p>
+            <button type="submit" class="log">Login</button>
+            </form>
+            <p>Don't have an account? <br> <a href="/sign" class="sub">Sign in</a></p>
         
 
     </div>
-     <div class="footer">
-            <!-- <h3>copyright &copy by sagar</a></h3> -->
-        </div>
+     <!-- <div class="footer">
+            <h3>copyright &copy by sagar</a></h3>
+        </div> -->
 
         
+ <%- include("partials/footer") %>
         <script src='login.js'></script>
 
 </body>

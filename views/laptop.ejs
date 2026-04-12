@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/style/menue.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+
+<%- include("partials/header") %>
+
+     <div class="content">
+
+  <% products1.forEach(p1 => { %>
+
+    <div class="frame">
+
+      <!-- IMAGE -->
+      <div class="p1">
+        <img src="<%= p1.image %>" alt="">
+        
+      </div>
+
+      <!-- NAME -->
+      <div class="p2">
+        <p><%= p1.namefull %></p>
+      </div>
+
+      <!-- BUTTON -->
+      <form action="/cart" method="POST">
+        <input type="hidden" name="name" value="<%= p1.namefull %>">
+        <input type="hidden" name="image" value="<%= p1.image %>">
+
+        <button type="submit">Add</button>
+      </form>
+
+    </div>
+  <% }) %>
+</div>
+
+
+ <%- include("partials/footer") %>
+</body>
+</html>
